@@ -1,4 +1,4 @@
-class Hotel::CreateService
+class Hotels::CreateService
   def initialize(params)
     @params = params
   end

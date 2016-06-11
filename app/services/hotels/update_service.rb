@@ -1,4 +1,4 @@
-class Hotel::UpdateService
+class Hotels::UpdateService
   def initialize(params)
     @params = params
     @hotel = Hotel.find_by(id: @params[:id])

@@ -12,7 +12,7 @@ class HotelsController < ApplicationController
   end
 
   def create
-    result = Hotel::CreateService.new(hotel_params).perform!
+    result = Hotels::CreateService.new(hotel_params).perform!
 
     if result.success?
       render json: result.data
@@ -22,7 +22,7 @@ class HotelsController < ApplicationController
   end
 
   def update
-    result = Hotel::UpdateService.new(hotel_update_params).perform!
+    result = Hotels::UpdateService.new(hotel_update_params).perform!
 
     if result.success?
       render json: result.data

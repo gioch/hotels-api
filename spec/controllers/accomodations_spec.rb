@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe AccomodationTypesController, type: :controller do
   describe 'GET #index' do
-    it 'should all accomodation types' do
+    it 'should get all accomodation types' do
       accomodation = create(:accomodation_type)
 
       get :index
