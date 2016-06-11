@@ -14,6 +14,6 @@ test:
 production:
   <<: *default
   pool: 30
-  database: hotels_api_production
+  database: <%= ENV['HOTELS_API_DATABASE'] %>
   username: <%= ENV['HOTELS_API_DATABASE_USERNAME'] %>
   password: <%= ENV['HOTELS_API_DATABASE_PASSWORD'] %>
