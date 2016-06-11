@@ -33,6 +33,10 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    active_model_serializers (0.10.0)
+      actionpack (>= 4.0)
+      activemodel (>= 4.0)
+      railties (>= 4.0)
     activejob (5.0.0.rc1)
       activesupport (= 5.0.0.rc1)
       globalid (>= 0.3.6)
@@ -97,6 +101,7 @@ GEM
     puma (3.4.0)
     rack (2.0.0.rc1)
       json
+    rack-cors (0.4.0)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.0.rc1)
@@ -168,6 +173,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers
   database_cleaner
   factory_girl_rails
   ffaker (~> 2.1)
@@ -176,6 +182,7 @@ DEPENDENCIES
   pry-byebug
   pry-rails
   puma (~> 3.0)
+  rack-cors
   rails (>= 5.0.0.rc1, < 5.1)
   rails-controller-testing!
   rspec-rails (= 3.5.0.beta1)

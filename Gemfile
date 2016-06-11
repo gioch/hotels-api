@@ -3,8 +3,8 @@ source 'https://rubygems.org'
 gem 'rails', '>= 5.0.0.rc1', '< 5.1'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
-# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'
+gem 'rack-cors'
+gem 'active_model_serializers'
 
 group :development, :test do
   gem 'pry-rails'
