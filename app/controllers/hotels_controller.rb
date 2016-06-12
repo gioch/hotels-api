@@ -4,7 +4,7 @@ class HotelsController < ApplicationController
   def suggestions
     @hotels = Hotels::SearchService.new(params).perform!
 
-    render json: @hotels, each_serializer: SuggestionSerializer
+    render json: @hotels, each_serializer: SuggestionSerializer, search_string: params[:query]
   end
 
   def index
