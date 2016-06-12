@@ -4,8 +4,14 @@ describe HotelsController, type: :controller do
   let(:accomodation_type) { create(:accomodation_type) }
   let(:hotel) { create(:hotel) }
 
-
   describe 'GET #index' do
+    it 'should get all accomodation types' do
+      expect_any_instance_of(Hotels::SearchService)
+        .to receive(:perform!).and_call_original
+
+      get :index
+    end
+
     it 'should get all accomodation types' do
       hotel = create(:hotel)
 
@@ -183,14 +189,22 @@ private
   def correct_create_hotel_params
     {
       hotel: {
-        name: 'test', address: 'test', star_rating: 1,
+        name: FactoryGirl.generate(:name),
+        address: FactoryGirl.generate(:address),
+        star_rating: FactoryGirl.generate(:star_rating),
         accomodation_type_id: accomodation_type.id
       }
     }
   end
 
   def incorrect_create_hotel_params
-    { hotel: { name: 'test', address: 'test', star_rating: 1 } }
+    {
+      hotel: {
+        name: FactoryGirl.generate(:name),
+        address: FactoryGirl.generate(:address),
+        star_rating: FactoryGirl.generate(:star_rating)
+      }
+    }
   end
 
   def correct_update_hotel_params
