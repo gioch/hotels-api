@@ -12,9 +12,6 @@ class HotelsController < ApplicationController
   end
 
   def create
-    render json: params
-    return
-
     result = Hotels::CreateService.new(hotel_params).perform!
 
     if result.success?
