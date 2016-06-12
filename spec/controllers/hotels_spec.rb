@@ -184,6 +184,24 @@ describe HotelsController, type: :controller do
     end
   end
 
+
+  describe 'before action filters' do
+    it { is_expected.to execute_before_action :set_hotel,
+      on: :show, via: :get, with: correct_update_hotel_params }
+
+    it { is_expected.to execute_before_action :set_hotel,
+      on: :update, via: :put, with: correct_update_hotel_params }
+
+    it { is_expected.to execute_before_action :set_hotel,
+      on: :destroy, via: :delete, with: correct_update_hotel_params }
+
+    it { is_expected.not_to execute_before_action :set_hotel,
+      on: :index, via: :get, with: correct_update_hotel_params }
+
+    it { is_expected.not_to execute_before_action :set_hotel,
+      on: :create, via: :post, with: correct_update_hotel_params }
+  end
+
 private
 
   def correct_create_hotel_params
