@@ -184,7 +184,6 @@ describe HotelsController, type: :controller do
     end
   end
 
-
   describe 'before action filters' do
     it { is_expected.to execute_before_action :set_hotel,
       on: :show, via: :get, with: correct_update_hotel_params }
