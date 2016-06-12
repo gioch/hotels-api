@@ -1,5 +1,11 @@
 class HotelsController < ApplicationController
-  before_action :set_hotel, except: [:index, :create]
+  before_action :set_hotel, except: [:index, :create, :suggestions]
+
+  def suggestions
+    @hotels = Hotels::SearchService.new(params).perform!
+
+    render json: @hotels, each_serializer: SuggestionSerializer
+  end
 
   def index
     @hotels = Hotels::SearchService.new(params).perform!
