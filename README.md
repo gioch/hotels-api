@@ -1,7 +1,9 @@
 # hotels-api
 
-Api project with CRUD functionality.
-Has implemented Rspec tests
+Rails 5 API project. It has implemented CRUD functionality with validations, Rspec tests,
+different best practices (Service objects). It stores all data about hotels in Postgres.
+It is hosted on heroku (https://evening-cliffs-68697.herokuapp.com/api/hotels).
+I did not added authentication to it. since it would took time and it it will be required for next tests tasks, i'll add it without problem.
 
 To run project locally:
 * download project
